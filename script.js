@@ -1,0 +1,212 @@
+// Module Data Structure
+const moduleData = {
+    1: {
+        title: "Introduction & Classification",
+        questions: [
+            { id: 1, title: 'Q1: Definitions & Sources', type: 'theory' },
+            { id: 2, title: 'Q2: Functions & Limitations', type: 'theory' },
+            { id: 3, title: 'Q3: Classification', type: 'theory' },
+            { id: 4, title: 'Q4: Tabulation (Jobs)', type: 'table' },
+            { id: 5, title: 'Q5: Tabulation (Coffee)', type: 'table' },
+            { id: 6, title: 'Q6: Histogram', type: 'graph' },
+            { id: 7, title: 'Q7: "More Than" Dist.', type: 'table' },
+            { id: 8, title: 'Q8: Ogive Curves', type: 'graph' },
+        ]
+    },
+    2: {
+        title: "Measures of Central Tendency",
+        questions: [
+            { id: 1, title: 'Q1: Missing Freq (Mean)', type: 'calc' },
+            { id: 2, title: 'Q2: Missing x,y (Mean)', type: 'calc' },
+            { id: 4, title: 'Q4: Two Distributions', type: 'calc' },
+            { id: 5, title: 'Q5: Mean & Median', type: 'calc' },
+            { id: 6, title: 'Q6: Missing Freq (Median)', type: 'calc' },
+            { id: 7, title: 'Q7: Missing Freq (Median=2400)', type: 'calc' },
+            { id: 8, title: 'Q8: Mean, Median, Mode', type: 'calc' },
+            { id: 9, title: 'Q9: Mode Calculation', type: 'calc' },
+        ]
+    },
+    3: {
+        title: "Measures of Dispersion",
+        questions: [
+            { id: 1, title: 'Q1: Quartile Deviation', type: 'calc' },
+            { id: 2, title: 'Q2: Q.D. & Coefficient', type: 'calc' },
+            { id: 3, title: 'Q3: Mean Deviation', type: 'calc' },
+            { id: 4, title: 'Q4: M.D. about Median', type: 'calc' },
+            { id: 5, title: 'Q5: M.D. about Mean', type: 'calc' },
+            { id: 6, title: 'Q6: Correction Problem', type: 'calc' },
+            { id: 7, title: 'Q7: Standard Deviation', type: 'calc' },
+            { id: 8, title: 'Q8: Combined Mean & S.D.', type: 'calc' },
+            { id: 12, title: 'Q12: C.V. Comparison', type: 'calc' },
+            { id: 13, title: 'Q13: Skewness (CI)', type: 'calc' },
+            { id: 14, title: 'Q14: Skewness (Discrete)', type: 'calc' },
+            { id: 15, title: 'Q15: C.V. from Skewness', type: 'calc' },
+            { id: 17, title: 'Q17: First Four Moments', type: 'calc' },
+        ]
+    },
+    4: {
+        title: "Time Series Analysis",
+        questions: [
+            { id: 1, title: 'Q1: Linear Trend (Least Squares)', type: 'calc' },
+            { id: 2, title: 'Q2: Definition & Components', type: 'theory' },
+            { id: 3, title: 'Q3: Uses of Time Series', type: 'theory' },
+            { id: 4, title: 'Q4: Seasonal Index', type: 'table' },
+            { id: 5, title: 'Q5: Trend Equation', type: 'calc' },
+            { id: 6, title: 'Q6: Moving Averages', type: 'table' },
+            { id: 7, title: 'Q7: 5-Year MA (Sales)', type: 'graph' },
+            { id: 8, title: 'Q8: Period Detection', type: 'graph' },
+            { id: 9, title: 'Q9: Parabolic Trend', type: 'calc' },
+        ]
+    },
+    5: {
+        title: "Index Numbers",
+        questions: [
+            { id: 1, title: 'Q1: Unweighted Aggregative', type: 'calc' },
+            { id: 2, title: 'Q2: Price Index Numbers', type: 'calc' },
+            { id: 3, title: 'Q3: DB & Fisher Index', type: 'calc' },
+            { id: 4, title: 'Q4: Quantity Index', type: 'calc' },
+            { id: 5, title: 'Q5: ME, DB, Fisher Qty', type: 'calc' },
+            { id: 6, title: 'Q6: Value Index', type: 'calc' },
+            { id: 7, title: 'Q7: Verify Tests', type: 'calc' },
+            { id: 8, title: 'Q8: Fisher TRT & FRT', type: 'calc' },
+            { id: 9, title: 'Q9: CPI Calculation', type: 'table' },
+            { id: 10, title: 'Q10: CLI Aggregative', type: 'calc' },
+            { id: 11, title: 'Q11: CLI Weighted Avg', type: 'calc' },
+            { id: 12, title: 'Q12: CLI Family Budget', type: 'calc' },
+            { id: 13, title: 'Q13: CPI from % Exp', type: 'calc' },
+        ]
+    },
+    6: {
+        title: "Formula Sheet",
+        questions: [
+            { id: 1, title: 'M1: Classification & Tabulation', type: 'theory' },
+            { id: 2, title: 'M2: Central Tendency', type: 'calc' },
+            { id: 3, title: 'M3: Dispersion & Skewness', type: 'calc' },
+            { id: 4, title: 'M4: Time Series', type: 'graph' },
+            { id: 5, title: 'M5: Index Numbers', type: 'table' },
+        ]
+    }
+};
+
+let currentModule = 1;
+let currentQuestion = 1;
+
+// Icons
+const icons = {
+    graph: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>',
+    table: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line><line x1="12" y1="3" x2="12" y2="21"></line></svg>',
+    theory: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>',
+    calc: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="8" y1="14" x2="8" y2="18"></line><line x1="12" y1="14" x2="12" y2="18"></line><line x1="16" y1="14" x2="16" y2="18"></line></svg>',
+    chevron: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>'
+};
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    renderQuestionList();
+    renderContent();
+    setupEventListeners();
+});
+
+function setupEventListeners() {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+    document.getElementById('openSidebar').addEventListener('click', () => {
+        sidebar.classList.add('active');
+        overlay.classList.add('active');
+    });
+    document.getElementById('closeSidebar').addEventListener('click', closeSidebar);
+    overlay.addEventListener('click', closeSidebar);
+
+    document.querySelectorAll('.module-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            currentModule = parseInt(tab.dataset.module);
+            currentQuestion = moduleData[currentModule].questions[0].id;
+            updateModuleTabs();
+            renderQuestionList();
+            renderContent();
+        });
+    });
+}
+
+function closeSidebar() {
+    document.getElementById('sidebar').classList.remove('active');
+    document.getElementById('sidebarOverlay').classList.remove('active');
+}
+
+function updateModuleTabs() {
+    document.querySelectorAll('.module-tab').forEach(tab => {
+        tab.classList.toggle('active', parseInt(tab.dataset.module) === currentModule);
+    });
+    document.getElementById('moduleTitle').textContent = `Module ${currentModule}: ${moduleData[currentModule].title}`;
+    document.getElementById('mobileTitle').textContent = `Module ${currentModule} Solutions`;
+}
+
+function renderQuestionList() {
+    const container = document.getElementById('questionList');
+    const questions = moduleData[currentModule].questions;
+    container.innerHTML = questions.map(q => `
+        <button class="question-btn ${q.id === currentQuestion ? 'active' : ''}" onclick="selectQuestion(${q.id})">
+            <div class="question-btn-content">
+                <span class="question-number">${q.id}</span>
+                <span class="question-title">${q.title}</span>
+            </div>
+            <span class="question-icon icon-${q.type}">${icons[q.type]}</span>
+        </button>
+    `).join('');
+    updateModuleTabs();
+}
+
+function selectQuestion(id) {
+    currentQuestion = id;
+    renderQuestionList();
+    renderContent();
+    closeSidebar();
+}
+
+function renderContent() {
+    const container = document.getElementById('contentContainer');
+    const renderer = window[`renderM${currentModule}Q${currentQuestion}`];
+    container.innerHTML = renderer ? renderer() : renderPlaceholder();
+    container.classList.add('fade-in');
+    setTimeout(() => container.classList.remove('fade-in'), 400);
+    if (typeof renderMathInElement !== 'undefined') {
+        renderMathInElement(container, {
+            delimiters: [{ left: "$$", right: "$$", display: true }, { left: "$", right: "$", display: false }]
+        });
+    }
+    // Initialize charts for M4 Q7 and Q8
+    if (currentModule === 4 && currentQuestion === 7 && typeof initChartQ7 === 'function') {
+        setTimeout(initChartQ7, 100);
+    }
+    if (currentModule === 4 && currentQuestion === 8 && typeof initChartQ8 === 'function') {
+        setTimeout(initChartQ8, 100);
+    }
+}
+
+function renderPlaceholder() {
+    return `<div class="section"><p>Content for this question is being prepared...</p></div>`;
+}
+
+function header(title, subtitle, iconType = 'calc') {
+    return `<div class="solution-header"><div class="solution-header-content"><div class="solution-icon">${icons[iconType] || icons.calc}</div><h2 class="solution-title">${title}</h2></div>${subtitle ? `<p class="solution-subtitle">${subtitle}</p>` : ''}</div>`;
+}
+
+function section(title, content) {
+    return `<div class="section"><h3 class="section-title">${icons.chevron} ${title}</h3><div class="section-content">${content}</div></div>`;
+}
+
+function answer(label, value) {
+    return `<div class="answer-box"><div class="answer-box-title">✓ ${label}</div><div class="answer-value">${value}</div></div>`;
+}
+
+function note(text) {
+    return `<div class="note-box"><strong>Note:</strong> ${text}</div>`;
+}
+
+function formula(tex) {
+    return `<div class="formula-box">$$${tex}$$</div>`;
+}
+
+function calcStep(title, content) {
+    return `<div class="calc-step"><div class="calc-step-title">${title}</div>${content}</div>`;
+}

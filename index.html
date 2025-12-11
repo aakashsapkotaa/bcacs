@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div>
+                    <h1>Statistics</h1>
+                    <p>BCA III Question Bank</p>
+                </div>
+                <button class="close-btn" id="closeSidebar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="module-tabs" id="moduleTabs">
+                <button class="module-tab active" data-module="1">M1</button>
+                <button class="module-tab" data-module="2">M2</button>
+                <button class="module-tab" data-module="3">M3</button>
+                <button class="module-tab" data-module="4">M4</button>
+                <button class="module-tab" data-module="5">M5</button>
+                <button class="module-tab" data-module="6">F</button>
+            </div>
+            <div class="module-title" id="moduleTitle">Module 1: Introduction & Classification</div>
+            <nav class="sidebar-nav" id="questionList"></nav>
+            <div class="sidebar-footer">III BCA Statistics Solutions</div>
+        </aside>
+        <main class="main-content">
+            <header class="mobile-header">
+                <button class="menu-btn" id="openSidebar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+                <span id="mobileTitle">Module 1 Solutions</span>
+            </header>
+            <div class="content-wrapper">
+                <div class="content-container" id="contentContainer"></div>
+            </div>
+        </main>
+    </div>
+    <script src="module1.js"></script>
+    <script src="module2.js"></script>
+    <script src="module3.js"></script>
+    <script src="module4.js"></script>
+    <script src="module5.js"></script>
+    <script src="formula.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: "$$", right: "$$", display: true },
+                    { left: "$", right: "$", display: false },
+                    { left: "\\[", right: "\\]", display: true },
+                    { left: "\\(", right: "\\)", display: false }
+                ]
+            });
+        });
+    </script>
+</body>
+
+</html>
