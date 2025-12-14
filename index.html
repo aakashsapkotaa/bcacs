@@ -126,33 +126,6 @@
             display: none;
         }
 
-        /* Back button */
-        .back-btn {
-            position: fixed;
-            top: 1rem;
-            left: 1rem;
-            z-index: 1000;
-            background: white;
-            border: none;
-            border-radius: 0.5rem;
-            padding: 0.5rem 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            font-weight: 500;
-            color: #374151;
-            transition: all 0.2s ease;
-        }
-
-        .back-btn:hover {
-            background: #f3f4f6;
-        }
-
-        .back-btn.hidden {
-            display: none;
-        }
 
         @media (max-width: 640px) {
             .landing-header h1 {
@@ -202,14 +175,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Back Button -->
-    <button class="back-btn hidden" id="backBtn" onclick="goToLanding()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="15 18 9 12 15 6"></polyline>
-        </svg>
-        Back
-    </button>
 
     <!-- Main App (Hidden initially) -->
     <div class="app-container hidden" id="appContainer">
@@ -274,7 +239,6 @@
         function selectSubject(subject) {
             document.getElementById('landingPage').classList.add('hidden');
             document.getElementById('appContainer').classList.remove('hidden');
-            document.getElementById('backBtn').classList.remove('hidden');
 
             // Update current subject
             currentSubject = subject;
@@ -302,11 +266,6 @@
             renderContent();
         }
 
-        function goToLanding() {
-            document.getElementById('landingPage').classList.remove('hidden');
-            document.getElementById('appContainer').classList.add('hidden');
-            document.getElementById('backBtn').classList.add('hidden');
-        }
 
         document.addEventListener("DOMContentLoaded", function () {
             renderMathInElement(document.body, {
