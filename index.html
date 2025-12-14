@@ -4,21 +4,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solution</title>
+    <title>BCA III Question Bank</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Prism.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    <style>
+        /* Landing Page Styles */
+        .landing-page {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .landing-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .landing-header h1 {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .landing-header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+        }
+
+        .subject-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .subject-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .subject-card:active {
+            transform: translateY(0);
+        }
+
+        .subject-icon {
+            font-size: 2.5rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.75rem;
+        }
+
+        .subject-card.java .subject-icon {
+            background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+        }
+
+        .subject-card.statistics .subject-icon {
+            background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+        }
+
+        .subject-info h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: #1f2937;
+        }
+
+        .subject-info p {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin: 0;
+        }
+
+        .subject-arrow {
+            margin-left: auto;
+            color: #9ca3af;
+            transition: transform 0.3s ease;
+        }
+
+        .subject-card:hover .subject-arrow {
+            transform: translateX(4px);
+            color: #3b82f6;
+        }
+
+        /* Hide app when on landing */
+        .app-container.hidden {
+            display: none;
+        }
+
+        .landing-page.hidden {
+            display: none;
+        }
+
+        /* Back button */
+        .back-btn {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 1000;
+            background: white;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            font-weight: 500;
+            color: #374151;
+            transition: all 0.2s ease;
+        }
+
+        .back-btn:hover {
+            background: #f3f4f6;
+        }
+
+        .back-btn.hidden {
+            display: none;
+        }
+
+        @media (max-width: 640px) {
+            .landing-header h1 {
+                font-size: 1.75rem;
+            }
+
+            .subject-cards {
+                padding: 0 1rem;
+            }
+
+            .subject-card {
+                padding: 1.25rem 1.5rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="app-container">
+    <!-- Landing Page -->
+    <div class="landing-page" id="landingPage">
+        <div class="landing-header">
+            <h1>📚 BCA III Question Bank</h1>
+            <p>Select a subject to study</p>
+        </div>
+        <div class="subject-cards">
+            <div class="subject-card java" onclick="selectSubject('java')">
+                <div class="subject-icon">☕</div>
+                <div class="subject-info">
+                    <h2>Java OOP</h2>
+                    <p>5 Modules • Object Oriented Programming</p>
+                </div>
+                <svg class="subject-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </div>
+            <div class="subject-card statistics" onclick="selectSubject('statistics')">
+                <div class="subject-icon">📊</div>
+                <div class="subject-info">
+                    <h2>Statistics</h2>
+                    <p>5 Modules + Formulas</p>
+                </div>
+                <svg class="subject-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back Button -->
+    <button class="back-btn hidden" id="backBtn" onclick="goToLanding()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+        Back
+    </button>
+
+    <!-- Main App (Hidden initially) -->
+    <div class="app-container hidden" id="appContainer">
         <div class="sidebar-overlay" id="sidebarOverlay"></div>
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <div>
-                    <h1>Statistics</h1>
+                    <p id="currentSubjectTitle">📊 Statistics</p>
                     <p>BCA III Question Bank</p>
                 </div>
                 <button class="close-btn" id="closeSidebar">
@@ -38,7 +237,7 @@
             </div>
             <div class="module-title" id="moduleTitle">Module 1: Introduction & Classification</div>
             <nav class="sidebar-nav" id="questionList"></nav>
-            <div class="sidebar-footer">III BCA Statistics Solutions</div>
+            <div class="sidebar-footer">III BCA Question Bank</div>
         </aside>
         <main class="main-content">
             <header class="mobile-header">
@@ -56,14 +255,59 @@
             </div>
         </main>
     </div>
-    <script src="module1.js"></script>
-    <script src="module2.js"></script>
-    <script src="module3.js"></script>
-    <script src="module4.js"></script>
-    <script src="module5.js"></script>
-    <script src="formula.js"></script>
+    <!-- Statistics Modules -->
+    <script src="statistics/module1.js"></script>
+    <script src="statistics/module2.js"></script>
+    <script src="statistics/module3.js"></script>
+    <script src="statistics/module4.js"></script>
+    <script src="statistics/module5.js"></script>
+    <script src="statistics/formula.js"></script>
+    <!-- Java Modules -->
+    <script src="java-oop/module1.js"></script>
+    <script src="java-oop/module2.js"></script>
+    <script src="java-oop/module3.js"></script>
+    <script src="java-oop/module4.js"></script>
+    <script src="java-oop/module5.js"></script>
     <script src="script.js"></script>
     <script>
+        // Landing page functions
+        function selectSubject(subject) {
+            document.getElementById('landingPage').classList.add('hidden');
+            document.getElementById('appContainer').classList.remove('hidden');
+            document.getElementById('backBtn').classList.remove('hidden');
+
+            // Update current subject
+            currentSubject = subject;
+            moduleData = subject === 'java' ? javaModuleData : statisticsModuleData;
+            currentModule = 1;
+            currentQuestion = 1;
+
+            // Update title
+            const titleEl = document.getElementById('currentSubjectTitle');
+            titleEl.textContent = subject === 'java' ? '☕ Java OOP' : '📊 Statistics';
+
+            // Rebuild tabs
+            const tabsContainer = document.getElementById('moduleTabs');
+            tabsContainer.innerHTML = '';
+            Object.keys(moduleData).forEach(key => {
+                const btn = document.createElement('button');
+                btn.className = 'module-tab' + (key === '1' ? ' active' : '');
+                btn.dataset.module = key;
+                btn.textContent = key === '6' ? 'F' : 'M' + key;
+                btn.onclick = () => setModule(parseInt(key));
+                tabsContainer.appendChild(btn);
+            });
+
+            renderQuestionList();
+            renderContent();
+        }
+
+        function goToLanding() {
+            document.getElementById('landingPage').classList.remove('hidden');
+            document.getElementById('appContainer').classList.add('hidden');
+            document.getElementById('backBtn').classList.add('hidden');
+        }
+
         document.addEventListener("DOMContentLoaded", function () {
             renderMathInElement(document.body, {
                 delimiters: [

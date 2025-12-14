@@ -1,5 +1,5 @@
-// Module Data Structure
-const moduleData = {
+// Module Data Structure for Statistics
+const statisticsModuleData = {
     1: {
         title: "Introduction & Classification",
         questions: [
@@ -88,6 +88,80 @@ const moduleData = {
     }
 };
 
+// Java Module Data Structure (Exact questions from PDF)
+const javaModuleData = {
+    1: {
+        title: "Introduction to Java",
+        questions: [
+            { id: 1, title: 'Q1: Data Types (10M)', type: 'code' },
+            { id: 2, title: 'Q2: Operators (10M)', type: 'code' },
+            { id: 3, title: 'Q3: Control Statements (10M)', type: 'code' },
+            { id: 4, title: 'Q4: Method Overloading (8M)', type: 'code' },
+            { id: 5, title: 'Q5: Arrays (8M)', type: 'code' },
+            { id: 6, title: 'Q6: Java Features (6M)', type: 'theory' },
+            { id: 7, title: 'Q7: JDK, JRE, JVM (8M)', type: 'theory' },
+            { id: 8, title: 'Q8: Program Structure (6M)', type: 'theory' },
+            { id: 9, title: 'Q9: Short Notes (6M)', type: 'theory' },
+        ]
+    },
+    2: {
+        title: "Objects & Classes",
+        questions: [
+            { id: 1, title: 'Q1: Class & Object (8M)', type: 'code' },
+            { id: 2, title: 'Q2: Constructors (8M)', type: 'code' },
+            { id: 3, title: 'Q3: String Methods (8M)', type: 'code' },
+            { id: 4, title: 'Q4: StringBuffer (8M)', type: 'code' },
+            { id: 5, title: 'Q5: Access Specifiers (8M)', type: 'theory' },
+            { id: 6, title: 'Q6: Static Keyword (8M)', type: 'code' },
+            { id: 7, title: 'Q7: this Keyword (6M)', type: 'code' },
+            { id: 8, title: 'Q8: Character Class (4M)', type: 'theory' },
+            { id: 9, title: 'Q9: Garbage Collection (6M)', type: 'theory' },
+        ]
+    },
+    3: {
+        title: "Inheritance & Polymorphism",
+        questions: [
+            { id: 1, title: 'Q1: Inheritance Types (10M)', type: 'code' },
+            { id: 2, title: 'Q2: Polymorphism (10M)', type: 'code' },
+            { id: 3, title: 'Q3: Packages (8M)', type: 'theory' },
+            { id: 4, title: 'Q4: Interfaces (8M)', type: 'code' },
+            { id: 5, title: 'Q5: Abstract Classes (6M)', type: 'theory' },
+            { id: 6, title: 'Q6: super Keyword (6M)', type: 'code' },
+            { id: 7, title: 'Q7: final Keyword (6M)', type: 'theory' },
+            { id: 8, title: 'Q8: Dynamic Method Dispatch (8M)', type: 'code' },
+        ]
+    },
+    4: {
+        title: "Event & GUI Programming",
+        questions: [
+            { id: 1, title: 'Q1: Events & Delegation Model (10M)', type: 'theory' },
+            { id: 2, title: 'Q2: Types of Events (10M)', type: 'code' },
+            { id: 3, title: 'Q3: GUI Components (8M)', type: 'theory' },
+            { id: 4, title: 'Q4: Applet Life Cycle (10M)', type: 'theory' },
+            { id: 5, title: 'Q5: Layout Managers (8M)', type: 'theory' },
+            { id: 6, title: 'Q6: Menus in Java (6M)', type: 'theory' },
+            { id: 7, title: 'Q7: Adapter Classes (6M)', type: 'code' },
+            { id: 8, title: 'Q8: Applets vs Applications (6M)', type: 'theory' },
+        ]
+    },
+    5: {
+        title: "I/O, Multithreading & Exceptions",
+        questions: [
+            { id: 1, title: 'Q1: Exception Handling (10M)', type: 'code' },
+            { id: 2, title: 'Q2: Thread Life Cycle (10M)', type: 'theory' },
+            { id: 3, title: 'Q3: File I/O (10M)', type: 'code' },
+            { id: 4, title: 'Q4: Creating Threads (10M)', type: 'code' },
+            { id: 5, title: 'Q5: Synchronization (8M)', type: 'code' },
+            { id: 6, title: 'Q6: Random Access Files (8M)', type: 'theory' },
+            { id: 7, title: 'Q7: Thread Priorities (6M)', type: 'theory' },
+            { id: 8, title: 'Q8: Custom Exceptions (8M)', type: 'code' },
+        ]
+    }
+};
+
+// Current state
+let currentSubject = 'statistics';
+let moduleData = statisticsModuleData;
 let currentModule = 1;
 let currentQuestion = 1;
 
@@ -97,8 +171,10 @@ const icons = {
     table: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line><line x1="12" y1="3" x2="12" y2="21"></line></svg>',
     theory: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>',
     calc: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="8" y1="14" x2="8" y2="18"></line><line x1="12" y1="14" x2="12" y2="18"></line><line x1="16" y1="14" x2="16" y2="18"></line></svg>',
+    code: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>',
     chevron: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>'
 };
+
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
@@ -117,6 +193,21 @@ function setupEventListeners() {
     document.getElementById('closeSidebar').addEventListener('click', closeSidebar);
     overlay.addEventListener('click', closeSidebar);
 
+    // Subject selector
+    document.getElementById('subjectSelector').addEventListener('change', (e) => {
+        currentSubject = e.target.value;
+        moduleData = currentSubject === 'java' ? javaModuleData : statisticsModuleData;
+        currentModule = 1;
+        currentQuestion = moduleData[1].questions[0].id;
+        rebuildModuleTabs();
+        renderQuestionList();
+        renderContent();
+    });
+
+    setupModuleTabListeners();
+}
+
+function setupModuleTabListeners() {
     document.querySelectorAll('.module-tab').forEach(tab => {
         tab.addEventListener('click', () => {
             currentModule = parseInt(tab.dataset.module);
@@ -126,6 +217,16 @@ function setupEventListeners() {
             renderContent();
         });
     });
+}
+
+function rebuildModuleTabs() {
+    const container = document.getElementById('moduleTabs');
+    const moduleKeys = Object.keys(moduleData);
+    container.innerHTML = moduleKeys.map(key => {
+        const label = currentSubject === 'statistics' && key === '6' ? 'F' : `M${key}`;
+        return `<button class="module-tab ${key === '1' ? 'active' : ''}" data-module="${key}">${label}</button>`;
+    }).join('');
+    setupModuleTabListeners();
 }
 
 function closeSidebar() {
@@ -165,7 +266,9 @@ function selectQuestion(id) {
 
 function renderContent() {
     const container = document.getElementById('contentContainer');
-    const renderer = window[`renderM${currentModule}Q${currentQuestion}`];
+    // Use different function prefix for each subject
+    const prefix = currentSubject === 'java' ? 'renderJavaM' : 'renderM';
+    const renderer = window[`${prefix}${currentModule}Q${currentQuestion}`];
     container.innerHTML = renderer ? renderer() : renderPlaceholder();
     container.classList.add('fade-in');
     setTimeout(() => container.classList.remove('fade-in'), 400);
@@ -174,11 +277,15 @@ function renderContent() {
             delimiters: [{ left: "$$", right: "$$", display: true }, { left: "$", right: "$", display: false }]
         });
     }
-    // Initialize charts for M4 Q7 and Q8
-    if (currentModule === 4 && currentQuestion === 7 && typeof initChartQ7 === 'function') {
+    // Highlight code blocks for Java
+    if (typeof Prism !== 'undefined') {
+        Prism.highlightAll();
+    }
+    // Initialize charts for Statistics M4 Q7 and Q8
+    if (currentSubject === 'statistics' && currentModule === 4 && currentQuestion === 7 && typeof initChartQ7 === 'function') {
         setTimeout(initChartQ7, 100);
     }
-    if (currentModule === 4 && currentQuestion === 8 && typeof initChartQ8 === 'function') {
+    if (currentSubject === 'statistics' && currentModule === 4 && currentQuestion === 8 && typeof initChartQ8 === 'function') {
         setTimeout(initChartQ8, 100);
     }
 }
@@ -209,4 +316,32 @@ function formula(tex) {
 
 function calcStep(title, content) {
     return `<div class="calc-step"><div class="calc-step-title">${title}</div>${content}</div>`;
+}
+
+// Code block helper for Java
+function codeBlock(code, language = 'java') {
+    return `<pre class="code-block"><code class="language-${language}">${escapeHtml(code)}</code></pre>`;
+}
+
+function escapeHtml(text) {
+    const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+    return text.replace(/[&<>"']/g, m => map[m]);
+}
+
+// Table helper
+function table(headers, rows) {
+    return `
+        <table class="data-table">
+            <thead><tr>${headers.map(h => `<th>${h}</th>`).join('')}</tr></thead>
+            <tbody>${rows.map(row => `<tr>${row.map(cell => `<td>${cell}</td>`).join('')}</tr>`).join('')}</tbody>
+        </table>
+    `;
+}
+
+function setModule(moduleNum) {
+    currentModule = moduleNum;
+    currentQuestion = moduleData[currentModule].questions[0].id;
+    updateModuleTabs();
+    renderQuestionList();
+    renderContent();
 }
