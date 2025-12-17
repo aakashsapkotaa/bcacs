@@ -93,6 +93,10 @@
             background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
         }
 
+        .subject-card.cloud .subject-icon {
+            background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 100%);
+        }
+
         .subject-info h2 {
             font-size: 1.25rem;
             font-weight: 600;
@@ -151,7 +155,7 @@
             <p>Select a subject to study</p>
         </div>
         <div class="subject-cards">
-            <div class="subject-card java" onclick="selectSubject('java')">
+            <a href="javaoop.html" class="subject-card java">
                 <div class="subject-icon">☕</div>
                 <div class="subject-info">
                     <h2>Java OOP</h2>
@@ -161,8 +165,8 @@
                     stroke-width="2">
                     <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
-            </div>
-            <div class="subject-card statistics" onclick="selectSubject('statistics')">
+            </a>
+            <a href="statistics.html" class="subject-card statistics">
                 <div class="subject-icon">📊</div>
                 <div class="subject-info">
                     <h2>Statistics</h2>
@@ -172,7 +176,18 @@
                     stroke-width="2">
                     <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
-            </div>
+            </a>
+            <a href="cloudcomputing.html" class="subject-card cloud">
+                <div class="subject-icon">☁️</div>
+                <div class="subject-info">
+                    <h2>Cloud Computing</h2>
+                    <p>5 Modules • Virtualization & Security</p>
+                </div>
+                <svg class="subject-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
         </div>
     </div>
 

@@ -1,0 +1,830 @@
+Module 1: Introduction to Cloud Computing
+
+Semester End Examination Prep
+
+Question 1
+
+1a. Define Cloud Computing? Explain its working mechanism with a diagram. (08 Marks)
+
+Definition: Cloud computing is the delivery of computing services—like servers, storage,
+databases, and software—over the Internet ("the cloud"). Instead of buying and maintaining
+physical data centers, you rent access to these services from a provider (like AWS or Google
+Cloud) on a pay-as-you-go basis.
+
+Formal Definition (NIST - Simplified): It is a model that allows convenient, on-demand
+network access to a shared pool of configurable computing resources (like networks, servers,
+and storage) that can be set up quickly with minimal effort.
+
+Working Mechanism: Cloud computing works by connecting a user's device to the provider's
+data centers via the internet. It is divided into two main sections:
+
+1. Frontend (Client Side): This is the side the user sees. It includes the user's computer,
+network, and the application used to access the cloud (like a web browser).
+
+2. Backend (Server Side): This is the "cloud" itself. It consists of servers, data storage
+systems, and the software that runs the services.
+
+3. The Internet: This acts as the bridge connecting the Frontend to the Backend.
+
+4. Central Server: This manages the traffic and ensures everything runs smoothly by
+following specific rules (protocols).
+
+Diagram: (in your exam, draw a simple diagram like this)
+
+[ FRONTEND ] [ BACKEND ]
+User Computer / Mobile Cloud Data Center
+$a-- 2-2-2 --- 2-25-25 + tooo eo on - n-ne -e- +
+| Web Browser | | Servers |
+| (Client App) | <--------- > | Storage
+dhossoosesos tooo n----- + INTERNET | Databases
+| | Security |
+| toon nnn nnn nee +
+
+|
+[ CENTRAL SERVER ]
+(Manages Traffic)
+1b. Explain the Goals of cloud computing and alignment with IT needs. (06 Marks)
+
+The main goal of cloud computing is to make IT resources more efficient and accessible. The
+
+five key goals (characteristics) are:
+1. On-Demand Self-Service:
+
+* Users can get computing power (like server time or network storage) automatically
+whenever they need it, without needing to talk to a human admin.
+
+2. Broad Network Access:
+
+e Services are available over the network and can be accessed through standard
+devices like mobile phones, laptops, and tablets from anywhere.
+
+3. Resource Pooling:
+
+e The provider's resources serve multiple customers at the same time (Multi-tenancy).
+Physical and virtual resources are assigned and reassigned according to demand.
+
+4. Rapid Elasticity:
+
+* Capabilities can scale outward (get bigger) and inward (get smaller) quickly. To the
+user, the resources often look unlimited and can be bought in any quantity at any time.
+
+5. Measured Service:
+
+¢ Cloud systems automatically control and optimize resource use. Usage is monitored
+and billed, so you only pay for what you actually use (like an electricity bill).
+
+1c. Explain how organizations can leverage cloud computing to improve business agility
+and scalability. (06 Marks)
+
+Organizations use cloud computing to gain a competitive advantage in the following ways:
+
+1. Improving Agility (Speed):
+
+e Faster Deployment: In a traditional setup, getting a new server might take weeks. In the
+cloud, developers can deploy resources in minutes.
+
+¢ Time-to-Market: Because infrastructure is ready instantly, businesses can launch new
+
+products and updates much faster.
+
+e Innovation: It allows companies to experiment with new technologies (like Al or Big Data)
+without a huge risk or upfront cost.
+2. Improving Scalability:
+e Global Scale: You can deploy your application in multiple physical locations around the
+
+world with just a few clicks, putting your app closer to your customers.
+
+e Elasticity: If your website suddenly gets a million visitors (traffic spike), the cloud
+automatically adds more resources to handle it. When traffic drops, it reduces the
+
+resources to save money.
+Question 2
+
+2a. What is cloud computing and benefits of cloud computing? (07 Marks)
+
+What is Cloud Computing? (Refer to the definition in Answer 1a). It is accessing computing
+resources over the internet on a pay-as-you-go basis rather than owning physical hardware.
+Benefits of Cloud Computing:
+
+1. Cost Savings: You trade Capital Expense (fixed costs like buying servers) for Variable
+Expense (paying only for what you use).
+
+2. Agility & Speed: massive amounts of computing resources can be provisioned in minutes,
+giving businesses a lot of flexibility.
+
+3. Global Scale: You can expand to new geographic regions and deploy globally in minutes.
+
+4. Productivity: It removes the need for “racking and stacking"—physical chores like setting
+up hardware, software patching, and cabling. IT teams can focus on important business
+goals instead.
+
+5. Reliability: Cloud providers offer data backup, disaster recovery, and business continuity,
+which makes data safer and easier to recover.
+
+2b. Explain the concept of Total Cost of Ownership (TCO) in cloud computing with
+suitable examples. (07 Marks)
+
+Concept of TCO: Total Cost of Ownership (TCO) is a financial estimate used to determine the
+direct and indirect costs of a product or system. In the cloud, TCO analysis helps a company
+decide if moving to the cloud is cheaper than staying on-premises (in their own building).
+
+Key Shift: CapEx vs. OpEx
+
+¢ CapEx (Capital Expenditure): Money spent upfront on physical infrastructure (buying
+servers, ACs, building data centers). This is the traditional model.
+
+e OpEx (Operational Expenditure): Money spent on services as they are used (monthly
+subscriptions). This is the Cloud model.
+
+TCO Calculation Factors (Examples): To calculate TCO, you must compare costs across
+
+several areas:
+1. Server Costs: Buying hardware (Traditional) vs. Renting instances (Cloud).
+
+2. Storage Costs: Buying hard drives/tape drives (Traditional) vs. Paying per GB of cloud
+storage (Cloud).
+
+3. Facility Costs: Paying for real estate, power, and cooling (Traditional) vs. $0 facility costs
+(Cloud).
+
+4. Labor Costs: Salaries for staff to repair hardware (Traditional) vs. Staff focusing on
+strategy (Cloud).
+
+Example: If a company buys a server for $10,000 (CapEx), they pay for it whether they use it or
+not. If they move to the cloud, they might pay $0.50 per hour (OpEx). If they only need the
+server for 10 hours, the cloud cost is $5.00 vs $10,000 upfront.
+
+2c. Discuss in detail the major deployment models for cloud computing. (06 Marks)
+
+The deployment model determines where the hardware lives and who manages it. There are
+
+three major models:
+
+1. Public Cloud:
+
+Definition: The infrastructure is owned and managed by a third-party provider (like AWS or
+Azure) and is available to the general public over the internet.
+
+Characteristics: Resources are shared among many organizations (Multi-tenancy). It has
+low upfront costs.
+
+Best For: Startups, testing, and websites with fluctuating traffic.
+
+2. Private Cloud:
+
+Definition: The infrastructure is used exclusively by a single organization. It can be located
+on-site or hosted by a third-party, but it is not shared with others.
+
+Characteristics: It offers the highest level of security and control. It is more expensive due
+
+to hardware and maintenance costs.
+
+Best For: Banks, government agencies, and companies with strict data privacy rules.
+
+3. Hybrid Cloud:
+
+Definition: A combination of Public and Private clouds. They remain unique entities but are
+connected by technology that allows data and applications to move between them.
+
+Characteristics: It offers flexibility. You can keep sensitive data in the private cloud and
+use the public cloud for extra power during peak times (Cloud Bursting).
+
+Best For: Organizations that need to balance security regulations with the flexibility of the
+
+public cloud.
+Module 2: Cloud Services
+
+Semester End Examination Preparation
+
+Question 3
+
+3a. Explain the SaaS model. What are the advantages and disadvantages of SaaS?
+Illustrate with real-world applications. (10 Marks)
+
+SaaS (Software as a Service) Model: SaaS is a software distribution model where a third-
+
+party provider hosts applications and makes them available to customers over the Internet.
+
+How it works: You don't install software on your computer (like a CD-ROM). Instead, you
+
+access it via a web browser.
+
+Management: The user manages nothing. The provider manages everything: the network,
+servers, operating systems, storage, and application updates.
+
+Advantages:
+
+1.
+2.
+
+4.
+
+Lower Upfront Cost: You don't need to buy expensive software licenses or servers.
+
+Accessibility: You can access the software from anywhere (home, office, coffee shop) as
+long as you have the internet.
+
+Automatic Updates: The provider handles all patches and upgrades. You always have the
+latest version.
+
+Scalability: You can easily add more users (licenses) as your company grows.
+
+Disadvantages:
+
+1.
+
+Security Risks: Your data is stored on someone else's server, which raises privacy
+
+concerns.
+Vendor Lock-in: It can be difficult to switch to a different provider or move your data out.
+Internet Dependence: If your internet goes down, you cannot work.
+
+Limited Customization: It is a "one-size-fits-all" solution. You often cannot change the
+software to fit your specific business needs perfectly.
+
+Real-World Applications (Examples):
+
+Google Workspace (Gmail, Docs): For email and document creation.
+Salesforce: For managing customer relationships (CRM).
+Dropbox: For file storage.
+
+Microsoft Office 365: For productivity tools (Word, Excel online).
+
+3b. Compare the advantages and disadvantages of SaaS, laaS, and PaaS with real-world
+examples from industry usage. (10 Marks)
+Feature
+
+Definition
+
+User Role
+
+Advantages
+
+Disadvantages
+
+Examples
+
+SaaS (Software as a
+Service)
+
+Provider delivers fully
+functional software over
+the internet.
+
+End User (Just uses the
+
+app).
+
+* No installation needed.
+
+¢ Automatic updates.
+
+¢ Accessible anywhere.
+
+»* Limited customization.
+
+» Data security
+concerns.
+
+»* Vendor lock-in.
+
+Gmail, Netflix,
+Salesforce
+
+Question 4 (OR Option)
+
+PaaS (Platform as a
+Service)
+
+Provider gives a framework
+(tools/runtime) for
+developers to build apps.
+
+Developer (Writes code,
+builds apps).
+
+» Faster coding (pre-built
+
+tools).
+
+- No server maintenance.
+
+» Easy scaling for apps.
+
+* Vendor lock-in (code
+
+might not work elsewhere).
+
+* Less control than laaS.
+
+Google App Engine,
+Heroku
+
+laaS (Infrastructure as a
+Service)
+
+Provider gives raw
+hardware (VMs, Storage)
+over the internet.
+
+IT Admin / Architect
+(Manages OS & Network).
+
+* Full control over the OS.
+
+* Highest flexibility.
+
++ Pay only for resources
+used.
+
+¢ Complex to manage
+(needs experts).
+
+* You must patch/secure
+the OS yourself.
+
+AWS EC2, Microsoft
+Azure VMs
+
+4a. Explain the laaS model and components in detail with examples. (05 Marks)
+
+laaS (Infrastructure as a Service) Model: laaS provides virtualized computing resources over
+
+the internet. It is like renting the raw hardware (servers) rather than buying it.
+
+e Control: The user has the highest level of control. The provider manages the physical
+
+hardware, but the user manages the Operating System (OS), middleware, and applications.
+
+Key Components:
+
+1. Virtual Machines (VMs): The main computing unit (like a virtual CPU and RAM).
+
+2. Storage: Places to store data, either as "Block storage” (like a hard drive) or “Object
+
+storage" (for files).
+
+3. Network: Virtual networks (VLANs), IP addresses, and firewalls to connect the VMs.
+
+4. Load Balancers: Tools to distribute traffic across multiple servers.
+
+Example:
+e Amazon EC2 (Elastic Compute Cloud): A user rents a virtual Linux server, installs their
+own database software on it, and manages the security settings themselves.
+
+Ab. Define virtualization and explain its key characteristics in detail. (O05 Marks)
+Definition: Virtualization is the process of creating a software-based (virtual) representation of
+something, such as a server, storage device, or network. It allows a single physical computer to
+run multiple "Virtual Machines" (VMs) at the same time.
+Key Characteristics:
+
+1. Partitioning: You can split one physical server into many smaller, safe virtual servers.
+
+2. Isolation: If one VM crashes or gets a virus, the others are safe. They do not affect each
+other.
+
+3. Encapsulation: A complete VM (OS + Apps + Data) is saved as a single file. This makes it
+easy to move or copy.
+
+4. Hardware Independence: A VM can run on any physical server. It doesn't care what brand
+
+of hardware is underneath.
+
+4c. Compare cold, warm, and live VM migration in cloud computing. (05 Marks)
+VM Migration is moving a Virtual Machine from one physical server to another.
+1. Cold Migration:
+
+¢ Process: The VM is powered off. The files are moved to the new server, and then the
+
+VM is turned back on.
+¢ Impact: There is significant downtime (the service stops working during the move).
+¢ Use Case: Maintenance windows where downtime is allowed.
+2. Warm Migration (Suspend/Resume):
+
+¢ Process: The VM is suspended (paused). The state (memory) is saved to disk, moved,
+and then resumed on the new server.
+
+¢ Impact: Short downtime (seconds to minutes), but open network connections might
+drop.
+
+3. Live Migration:
+
+¢ Process: The VM moves while it is still running. The memory is copied page-by-page
+while the user is still using the app.
+
+¢ Impact: Zero downtime. The user doesn't even notice the move happened.
+
+e Use Case: Load balancing or critical server maintenance.
+
+4d. What is a Multi-Cloud Model? Explain in detail. (05 Marks)
+
+Definition: A Multi-Cloud model is a strategy where an organization uses cloud services from
+two or more different public cloud providers (e.g., using both AWS and Google Cloud) at the
+
+same time.
+Why use it? (Details):
+
+1. Avoid Vendor Lock-in: If one provider raises prices or has technical issues, you are not
+stuck with them because you have another provider ready.
+
+2. Best-of-Breed Services: You might use Google Cloud for its excellent Al tools, but use
+Microsoft Azure because it works well with your Office 365. You pick the best tool from
+each provider.
+
+3. Reliability (Redundancy): If AWS goes down in a specific region, your application can
+keep running on Azure.
+
+4. Compliance: Some data might need to be stored in specific countries. Using different
+providers helps meet these local laws.
+Module 3: Programming Model
+
+Semester End Examination Preparation
+
+Question 5
+
+5a. Define Parallel Computing? Write the differences between parallel computing and
+distributed computing. (08 Marks)
+
+Definition: Parallel Computing is the process of using multiple processing elements (CPUs or
+Cores) simultaneously to solve a single problem.
+
+¢ How it works: A large problem is broken down into smaller parts. These parts are
+processed at the exact same time by different processors within a single computer system.
+
+¢ Goal: To solve problems faster (Speedup).
+
+Differences between Parallel and Distributed Computing:
+
+Feature Parallel Computing Distributed Computing
+
+Architecture Multiple processors within one Multiple autonomous computers connected
+single computer (Tightly Coupled). —_— via a network (Loosely Coupled).
+
+Memory Processors usually share the same Each computer has its own private
+
+memory (RAM). memory. They cannot see each other's RAM
+directly.
+
+Communication Communication happens via the Communication happens via the
+system bus (very fast). network/internet (slower, message passing).
+
+Goal Performance (Speed). Resource Sharing and Scalability.
+
+Example A Supercomputer or a Multicore The World Wide Web (Internet) or a Cloud
+Laptop. Data Center.
+
+5b. Explain Aneka in Cloud Computing. (06 Marks)
+
+Overview: Aneka is a cloud application platform designed specifically for the .NET
+environment (Windows). While most cloud tools are Linux-based, Aneka allows developers to
+build clouds using Microsoft technologies.
+
+Key Features:
+
+1. PaaS Solution: It provides a runtime environment for developing and deploying
+applications.
+
+2. Flexible Programming Models: Unlike other platforms that might only support one
+method, Aneka supports multiple ways to write code:
+¢ Task Programming: For independent tasks.
+¢ Thread Programming: For applications that use threads.
+¢ MapReduce: For data-intensive processing.
+
+3. Enterprise Use: It is often used to build private or enterprise clouds where companies
+want to utilize their idle desktop computers to create a “desktop grid."
+
+5c. Write Short note on AWS. (06 Marks)
+
+AWS (Amazon Web Services): AWS is the world's most comprehensive and broadly adopted
+cloud platform. It primarily offers Infrastructure as a Service (laaS) but also provides PaaS
+and Saa$& tools.
+
+Key Components:
+
+1. EC2 (Elastic Compute Cloud): This is the core service. It allows users to rent virtual
+machines (instances). You can choose the OS (Windows/Linux) and power (CPU/RAM) you
+need.
+
+2. $3 (Simple Storage Service): A service for storing files (objects). It offers unlimited
+storage that is highly durable (data doesn't get lost).
+
+3. SDKs (Software Development Kits): AWS provides tools for almost every programming
+language (Java, Python, .NET) so developers can control the cloud using code instead of
+
+just clicking buttons on a website.
+
+Question 6 (OR Option)
+
+6a. What is Hadoop? Explain its architecture and components in detail. (10 Marks)
+Definition: Apache Hadoop is an open-source software framework used for storing and
+processing massive datasets (Big Data). It is based on the MapReduce programming model.
+Hadoop Architecture: Hadoop follows a Master-Slave Architecture.
+
+¢ Master Node: The "Boss." It manages the file system namespace and schedules jobs.
+
+e Slave Nodes: The "Workers." They do the actual work of storing data and running
+computations.
+
+Key Components:
+1. HDFS (Hadoop Distributed File System):
+¢ Function: This is the storage layer.
+
+¢ How it works: When you save a large file, HDFS chops it into smaller "blocks." These
+blocks are distributed across many different machines.
+
+¢ Fault Tolerance: It makes copies (replicas) of every block. If one server crashes, the
+
+data is safe on another server.
+2. MapReduce:
+
+¢ Function: This is the processing layer.
+e Logie: It processes data in two steps:
+e Map: Breaks the task into smaller sub-tasks.
+e Reduce: Collects the results and combines them into a final answer.
+3. YARN (Yet Another Resource Negotiator):
+e Function: This is the resource management layer.
+
+* Role: It acts like an operating system for the cluster. It allocates CPU and RAM to
+different applications running on the system.
+
+6b. What is Google App Engine? Explain its features and advantages in detail. (10 Marks)
+Definition: Google App Engine (GAE) is a Platform as a Service (PaaS) product offered by
+
+Google. It allows developers to build and host web applications on Google's own infrastructure.
+
+Core Concept: The developer focuses only on writing code. Google handles the servers,
+operating systems, and scaling.
+Key Features:
+
+1. Automatic Scaling: If your app goes from 10 users to 10 million users overnight, GAE
+automatically adds more resources to handle it. You don't have to touch anything.
+
+2. Datastore: It uses a NoSQL database that is highly scalable, rather than a traditional SQL
+database.
+
+3. Language Support: It supports popular languages like Python, Java, Go, and PHP.
+Advantages:
+
+1. Zero Maintenance: You never have to patch a server or configure a firewall. Google does it
+all.
+
+2. Pay-as-you-go: You only pay for the resources your app actually uses. If no one visits
+your site, the cost is near zero.
+
+3. High Reliability: Your app runs in Google's data centers (the same ones that run YouTube
+and Search), so it is very unlikely to go down.
+Module 4: Virtualization Technology
+
+Semester End Examination Preparation
+Question 7
+
+7a. Define a hypervisor. Explain how Type-1 and Type-2 hypervisors differ in design and
+usage. (10 Marks)
+
+Definition: A Hypervisor (or Virtual Machine Monitor - VMM) is the software that creates and
+runs Virtual Machines (VMs). It sits between the physical hardware and the virtual machines,
+managing resources like CPU, RAM, and Storage so multiple operating systems can run on one
+computer at the same time.
+
+Differences between Type-1 and Type-2 Hypervisors:
+
+Feature Type-1 (Bare-Metal / Native) Type-2 (Hosted)
+
+Design Installs directly on the physical Installs as a software application on top of
+hardware. It replaces the Host an existing OS (like Windows or Linux).
+Operating System.
+
+Performance High Performance. It talks directly to Lower Performance. Requests must pass
+the hardware without a "middleman." through the Host OS first, which slows
+
+things down.
+
+Usage Used in Enterprise Data Centers and Used on Personal Computers for testing,
+Cloud Providers (AWS, Google Cloud). learning, or labs.
+
+Examples VMware ESXi, Microsoft Hyper-V, Xen. Oracle VirtualBox, VMware Workstation.
+
+7b. What is a virtual cluster? Explain how virtual clusters support distributed cloud
+workloads. (05 Marks)
+
+Definition: A Virtual Cluster is a group of Virtual Machines (VMs) connected together to work
+as a single, powerful system (like a Supercomputer). These VMs can be located on the same
+physical server or spread across different physical servers, but they act as one unit.
+
+How they support distributed workloads:
+
+1. High Availability: If one VM in the cluster fails, the others automatically take over the
+work. This ensures the application never goes down.
+
+2. Load Balancing: The cluster distributes the workload evenly across all VMs. If a complex
+task (like processing big data) comes in, the cluster splits the job so it finishes faster.
+
+3. Dynamic Sealing: You can add more VMs to the cluster instantly when the workload
+increases, without buying new physical hardware.
+7c. Define data center automation. Describe how virtualization enables automated
+provisioning and scaling. (05 Marks)
+
+Definition: Data Center Automation is the use of software and scripts to perform IT tasks—
+like installing servers, configuring networks, and patching software—without human
+intervention.
+
+How Virtualization enables this:
+
+1. Automated Provisioning (Creation): Since a Virtual Machine is just a software file,
+automation tools can "copy and paste" it. A script can create 100 new servers in minutes,
+whereas a human would take weeks to plug in 100 physical servers.
+
+2. Automated Scaling: Virtualization allows software to change hardware specs instantly. If a
+server is slow, an automated script can increase its RAM or CPU allocation on the fly
+without turning off the machine.
+
+Question 8 (OR Option)
+
+8a. What is virtualization? Describe in detail the architecture used to virtualize CPU,
+memory, and I/O devices within a cloud computing environment. (10 Marks)
+
+Definition: Virtualization is the process of creating a software-based (virtual) representation of
+a physical resource, such as a server, storage device, or network. It allows one physical
+computer to run multiple isolated operating systems (VMs) simultaneously.
+
+Virtualization Architecture: The architecture relies on the Hypervisor to trick the Guest OS
+into thinking it has real hardware.
+1. CPU Virtualization:
+e The Hypervisor schedules “time slots" on the physical CPU.
+
+e |t intercepts instructions from the Guest OS. If a VM asks to process data, the
+hypervisor passes it to the real CPU, gets the result, and hands it back to the VM. The
+VM believes it has its own dedicated processor.
+
+2. Memory Virtualization:
+* The Hypervisor manages a map called "Page Tables.”
+
+e It maps the Virtual Memory (what the Guest OS sees) to the Physical Memory (real
+RAM). It ensures that VM A cannot read the memory addresses assigned to VM B,
+
+keeping them secure and isolated.
+3. I/O Virtualization (Input/Output):
+e This handles devices like Hard Drives and Network Cards.
+
+e The Hypervisor creates "Virtual Drivers." When a VM tries to save a file, the hypervisor
+takes that request and sends it to the real hard drive. It acts like a traffic cop,
+managing data flow for multiple VMs sharing the same network cable.
+8b. Describe the various implementation levels of virtualization with suitable examples
+for each level. (05 Marks)
+
+Virtualization can be implemented at different layers of a computer system:
+1. Hardware Level (Server Virtualization):
+
+¢ Virtualization happens directly on the hardware using a Hypervisor. This creates full
+Virtual Machines.
+
+¢ Example: VMware ESXi, Microsoft Hyper-V.
+2. Operating System Level (Containerization):
+
+e The Host OS kernel is shared. Instead of creating full VMs, it creates lightweight
+isolated spaces called "Containers."
+
+e Example: Docker, Kubernetes.
+3. Application Level:
+
+e Virtualization happens inside a specific application environment. The app runs ona
+"Virtual Machine" created by the programming language, not the OS.
+
+e Example: Java Virtual Machine (JVM) runs Java code on any computer.
+
+8c. Explain any four virtualization tools used in cloud computing. Mention one key feature
+of each tool. (O05 Marks)
+
+1. VMware vSphere (ESXi):
+e Type: Type-1 Hypervisor.
+
+¢ Key Feature: High Stability & Reliability. It is the industry standard for large
+enterprise data centers.
+
+2. Oracle VirtualBox:
+* Type: Type-2 Hypervisor.
+
+* Key Feature: Free & Open Source. It is excellent for students and developers testing
+software on their personal laptops.
+
+3. Docker:
+e Type: Container Engine.
+
+e Key Feature: Lightweight. It starts up in milliseconds because it doesn't need to load a
+full Operating System for every app.
+
+4. Microsoft Hyper-V:
+e Type: Type-1 Hypervisor.
+
+e Key Feature: Windows Integration. It comes built-in with Windows Server and
+Windows 10/11 Pro, making it easy for Windows users to adopt.
+Module 5: Security
+
+Semester End Examination Preparation
+
+Question 9
+
+9a. What is security management in Peer-to-Peer networks? Explain why P2P systems
+require decentralized protection mechanisms. (08 Marks)
+
+Security Management in P2P: In a Peer-to-Peer (P2P) network, there is no central server.
+Every computer (node) acts as both a client and a server. Security management involves
+securing these direct connections to prevent the spread of bad data or viruses.
+
+Why they require decentralized protection:
+
+1. No Central Authority: Unlike a bank or a standard website, there is no "Main Server" to
+
+ban bad users or verify identities. Everyone is equal.
+
+2. Anonymous Users: Users can join the network anonymously. This makes it easy for
+attackers to hide.
+
+3. Dynamic Network: Nodes join and leave instantly. A centralized firewall cannot protect a
+network that changes every second.
+
+4. Scalability: If millions of users had to check with one central security server, the system
+would crash. The security must be spread out (decentralized) across all nodes.
+
+9b. Define cloud security. Explain why trust management is essential in multi-tenant
+cloud environments. (06 Marks)
+
+Cloud Security: Cloud security is a set of policies, controls, and technologies used to protect
+data, applications, and infrastructure involved in cloud computing. It focuses on keeping data
+private (Confidentiality), safe from changes (Integrity), and accessible (Availability).
+
+Why Trust Management is essential: In a multi-tenant environment, different companies
+(tenants) store their data on the same physical server.
+
+1. Lack of Physical Control: You cannot see or touch the server holding your data. You must
+"trust" the provider is keeping it safe.
+
+2. No Peeking: Trust management ensures that Tenant A cannot see Tenant B's data, even
+though they share the same hard drive.
+
+3. Accountability: If data is lost or stolen, trust management frameworks (like SLAs) define
+who is responsible—the customer or the provider.
+
+9c. What is distributed intrusion detection? Explain how multiple agents cooperate to
+detect attacks in cloud systems. (06 Marks)
+Distributed Intrusion Detection System (DIDS): A standard Intrusion Detection System (IDS)
+watches one computer for hackers. A Distributed IDS watches the entire cloud. It consists of
+sensors placed on many different servers that talk to each other.
+
+How agents cooperate:
+
+1. Local Agents: Small software programs (agents) sit on every server in the cloud. They
+monitor local traffic for suspicious activity (like a virus or a hacker scanning ports).
+
+2. Central Analysis: These agents send their logs to a central brain (Analysis Engine).
+
+3. Collective Immunity: If an agent on Server A sees a new attack, it tells the central brain.
+The brain then instantly updates Server B, C, and D to block that attack. The whole cloud
+
+learns from one attack.
+
+Question 10 (OR Option)
+
+10a. What is Power Trust? Describe how it improves reputation accuracy in large-scale
+P2P systems. (10 Marks)
+
+PowerTrust: PowerTrust is a reputation management system designed for P2P networks. It is
+built to separate the "good" reliable nodes from the "bad" malicious nodes effectively.
+
+How it improves accuracy: It uses the concept of "Power Nodes" based on the Power-Law
+Distribution (the 80/20 rule).
+
+1. Identifying Power Nodes: In any network, a small number of users (Power Nodes) are very
+active and honest. They do most of the good work.
+
+2. Aggregation: Instead of asking random strangers if a user is trustworthy, the system asks
+these highly reputable Power Nodes.
+
+3. Speed & Accuracy: Because Power Nodes have more history and data, their feedback is
+more accurate. Relying on them makes calculating trust scores faster and reduces the
+chance of fake reviews.
+
+10b. What is data encryption? Mention one reason it is essential in cloud storage. (05
+Marks)
+
+Data Encryption: Encryption is the process of scrambling data into a code (ciphertext) so that
+it looks like gibberish to anyone who does not have the "key" (password) to read it.
+
+Why it is essential in Cloud Storage:
+
+¢ Privacy from the Provider: Even if the cloud provider (like Google or Amazon) has access
+to the physical hard drive, they cannot read your files if they are encrypted. It ensures only
+you know what is in your data.
+
+10c. What is virtualization security? Give one threat related to hypervisors. (05 Marks)
+
+Virtualization Security: This refers to the security measures taken to protect the Virtual
+Machines (VMs) and the Hypervisor software that manages them. It ensures that the software
+layer separating the VMs remains strong.
+
+One Threat: VM Escape
+
+¢ Description: "VM Escape" is an attack where a hacker crashes out of the Virtual Machine
+they are renting and gains access to the underlying Host Server (Hypervisor).
+
+¢ Danger: If they "escape," they can potentially control or spy on ail other Virtual Machines
