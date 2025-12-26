@@ -1,0 +1,574 @@
+﻿Design and Analysis of Algorithms (DAA)
+Semester End Examination - Dec 2025
+Model Solution
+MODULE I
+Question 1(a)
+Define an algorithm. Explain the characteristics of an algorithm with an example.
+Concept Explanation
+Think of an algorithm like a cooking recipe. It is a step-by-step procedure to solve a specific problem. If you follow the steps exactly, you get the correct result every time.
+Solution
+Definition:
+An Algorithm is a finite sequence of well-defined, computer-implementable instructions, typically to solve a class of problems or to perform a computation.
+Characteristics of an Algorithm:
+To be a valid algorithm, it must satisfy these five properties:
+1. Input: It must take zero or more inputs.
+2. Output: It must produce at least one output (the result).
+3. Definiteness: Each instruction must be clear and unambiguous. (No guessing allowed!).
+4. Finiteness: The algorithm must terminate after a finite number of steps. It cannot run forever.
+5. Effectiveness: Every instruction must be basic enough to be carried out manually (using pencil and paper).
+Example: Algorithm to find the sum of two numbers
+Step 1: Start
+Step 2: Read input variables A and B
+Step 3: Calculate Sum = A + B
+Step 4: Display Sum
+Step 5: Stop
+
+* Finiteness: Ends at Step 5.
+* Definiteness: "Add A and B" is clear.
+Question 1(b)
+List and explain the various steps involved in designing an algorithm. Also, discuss the advantages and disadvantages of using algorithms.
+Solution
+Steps in Designing an Algorithm:
+1. Understand the Problem: Read the problem statement carefully. What is the input? What is the required output?
+2. Decide on Computational Means: Will this run on a supercomputer or a calculator? How much memory do we have?
+3. Design the Algorithm: Choose a technique (like Divide and Conquer, Greedy, etc.) and write the logic.
+4. Prove Correctness: Mathematically prove that it gives the right answer for all inputs.
+5. Analyze the Algorithm: Check efficiency. How much Time (speed) and Space (memory) does it need?
+6. Code the Algorithm: Convert the logical steps into a program (C, Java, Python).
+Advantages:
+* Easy to Understand: Written in English-like steps, so anyone can read it.
+* Language Independent: Can be converted into C++, Java, or Python later.
+* Debugging: Easier to find logical errors on paper before writing code.
+Disadvantages:
+* Time Consuming: Writing complex algorithms takes time.
+* No Standard Syntax: Different people might write the same algorithm differently.
+OR
+Question 2(a)
+Explain the framework for analyzing the efficiency of an algorithm. How input size measured in different problems?
+Concept Explanation
+How do we know if code is "good"? We don't measure it in seconds (because computers vary in speed). We measure it by counting operations based on the Input Size.
+Solution
+Analysis Framework:
+1. Time Efficiency: How fast does the algorithm run? We count the number of basic operations (like additions or comparisons) required.
+2. Space Efficiency: How much extra memory does the algorithm need?
+3. Order of Growth: We look at how the time grows as input ($n$) gets huge.
+Measuring Input Size ($n$):
+The "size" depends on the problem type:
+* Sorting/Searching lists: Input size $n$ is the number of items in the array/list.
+* Matrix Multiplication: Input size is the dimension of the matrix ($N \times N$).
+* Graph Problems: Input size is determined by Vertices ($V$) and Edges ($E$).
+* Polynomial Problems: Input size is the degree of the polynomial or the number of bits required to represent the number.
+Question 2(b)
+Define and differentiate between worst-case, best-case, and average-case analysis of an algorithm with examples.
+Solution
+Case Type
+	Definition
+	Example (Linear Search)
+	Best Case
+	The input configuration where the algorithm takes the minimum time.
+	The element we are looking for is at the first index. (1 comparison)
+	Worst Case
+	The input configuration where the algorithm takes the maximum time.
+	The element is at the last index or not present at all. ($n$ comparisons)
+	Average Case
+	The expected time taken over all possible inputs.
+	The element is somewhere in the middle. (approx $n/2$ comparisons)
+	Question 2(c)
+Discus Priori and Posterior analysis.
+Solution
+* Priori Analysis (Theoretical):
+   * Done before running the code.
+   * Based on mathematical calculation using asymptotic notations (Big-O).
+   * Independent of hardware (doesn't matter if it's an i3 or i9 processor).
+   * Example: Calculating that Bubble Sort is $O(n^2)$.
+* Posterior Analysis (Empirical):
+   * Done after running the code.
+   * Based on actual statistics (start time, end time).
+   * Dependent on hardware and compiler.
+   * Example: Running a sort on 1000 items and seeing it took 5ms.
+MODULE II
+Question 3(a)
+Explain the concepts of Big-O, Big-Omega (Ω), and Big-Theta (Θ) notations including their formal definitions, derivations, visual representations, and practical examples
+Concept Explanation
+These are the rulers we use to measure algorithm speed.
+* Big-O: The "Upper limit". It won't be slower than this. (Worst case).
+* Omega (Ω): The "Lower limit". It won't be faster than this. (Best case).
+* Theta (Θ): The "Tight bound". It's exactly in this range. (Average/Exact).
+Solution
+1. Big-O Notation ($O$)
+* Definition: $f(n) = O(g(n))$ if there exist positive constants $c$ and $n_0$ such that $0 \le f(n) \le c \cdot g(n)$ for all $n \ge n_0$.
+* Meaning: Worst-case complexity.
+* Visual: The function $f(n)$ is always below the line $c \cdot g(n)$.
+2. Big-Omega Notation ($\Omega$)
+* Definition: $f(n) = \Omega(g(n))$ if there exist positive constants $c$ and $n_0$ such that $0 \le c \cdot g(n) \le f(n)$ for all $n \ge n_0$.
+* Meaning: Best-case complexity.
+* Visual: The function $f(n)$ is always above the line $c \cdot g(n)$.
+3. Big-Theta Notation ($\Theta$)
+* Definition: $f(n) = \Theta(g(n))$ if there exist constants $c_1, c_2, n_0$ such that $c_1 \cdot g(n) \le f(n) \le c_2 \cdot g(n)$.
+* Meaning: Average/Tight complexity.
+* Visual: The function $f(n)$ is "sandwiched" between $c_1 \cdot g(n)$ and $c_2 \cdot g(n)$.
+Question 3(b)
+Explain time complexity and space complexity with suitable program examples.
+Solution
+Time Complexity:
+The amount of computer time it takes to run a program.
+* Example: Simple Loop
+// Prints numbers 0 to n-1
+for(int i=0; i<n; i++) {
+   printf("%d", i);
+}
+
+   * Analysis: The loop runs $n$ times.
+   * Complexity: $O(n)$ (Linear Time).
+Space Complexity:
+The amount of memory (RAM) needed to run the program.
+   * Example: Array Sum
+int sum(int arr[], int n) {
+   int total = 0; // Requires 1 unit of space
+   for(int i=0; i<n; i++) {
+       total = total + arr[i];
+   }
+   return total;
+}
+
+      * Analysis: We are using a fixed number of variables (total, i, n), regardless of the array size. We don't create a new array.
+      * Complexity: $O(1)$ (Constant Space).
+OR
+Question 4(a)
+Define Tower of Hanoi problem? State the rules involved in solving it. Draw neat diagrams for the initial and final configuration of the Tower of Hanoi problem with 4 disks. Analyze the time complexity.
+Concept Explanation
+A classic puzzle! You have 3 rods (A, B, C) and $N$ disks. You must move all disks from A to C using B as a helper.
+Solution
+Rules:
+      1. Move only one disk at a time.
+      2. A larger disk cannot be placed on top of a smaller disk.
+      3. Only the top disk of a stack can be moved.
+Diagram (4 Disks):
+Initial State:
+   |        |        |
+ [=]       |        |   (Disk 1 - Smallest)
+[===]      |        |   (Disk 2)
+[=====]     |        |   (Disk 3)
+[=======]    |        |   (Disk 4 - Largest)
+--------------------------
+Rod A    Rod B    Rod C
+
+Final State:
+   |        |        |
+  |        |       [=]
+  |        |      [===]
+  |        |     [=====]
+  |        |    [=======]
+--------------------------
+Rod A    Rod B    Rod C
+
+Time Complexity Analysis:
+The recurrence relation is: $T(n) = 2T(n-1) + 1$
+(Move $n-1$ disks to helper, move largest disk to destination, move $n-1$ disks to destination).
+      * $T(1) = 1$
+      * $T(2) = 3$
+      * $T(3) = 7$
+      * $T(n) = 2^n - 1$
+Complexity: $O(2^n)$ (Exponential Time).
+Question 4(b)
+Explain the concept of Binomial Coefficients and illustrate with suitable program examples.
+Solution
+Concept:
+Binomial coefficients, written as $C(n, k)$ or $\binom{n}{k}$, represent the number of ways to choose $k$ items from a set of $n$ items.
+Formula: $C(n, k) = \frac{n!}{k!(n-k)!}$
+However, using factorials is computationally expensive. We use Dynamic Programming (Pascal's Triangle logic):
+$C(n, k) = C(n-1, k-1) + C(n-1, k)$
+Program Example (Dynamic Programming approach):
+int binomialCoeff(int n, int k) {
+   int C[n+1][k+1];
+
+   for (int i = 0; i <= n; i++) {
+       for (int j = 0; j <= min(i, k); j++) {
+           if (j == 0 || j == i)
+               C[i][j] = 1; // Base case
+           else
+               C[i][j] = C[i-1][j-1] + C[i-1][j]; // Recursive step
+       }
+   }
+   return C[n][k];
+}
+
+MODULE III
+Question 5(a)
+Solve the Travelling Salesman Problem (TSP) using brute force method for 4 cities with the following cost matrix: Find the minimum tour cost.
+Matrix:
+| | A | B | C | D |
+|---|---|---|---|---|
+| A | 0 | 10 | 15 | 20 |
+| B | 10 | 0 | 35 | 25 |
+| C | 15 | 35 | 0 | 30 |
+| D | 20 | 25 | 30 | 0 |
+Solution
+Goal: Start at A, visit B, C, D exactly once, and return to A. Find the path with the lowest sum.
+We list all possible permutations of paths starting at A:
+      1. Path: A → B → C → D → A
+      * Cost: $10 (A \to B) + 35 (B \to C) + 30 (C \to D) + 20 (D \to A) = 95$
+      2. Path: A → B → D → C → A
+      * Cost: $10 (A \to B) + 25 (B \to D) + 30 (D \to C) + 15 (C \to A) = 80$
+      3. Path: A → C → B → D → A
+      * Cost: $15 (A \to C) + 35 (C \to B) + 25 (B \to D) + 20 (D \to A) = 95$
+      4. Path: A → C → D → B → A
+      * Cost: $15 (A \to C) + 30 (C \to D) + 25 (D \to B) + 10 (B \to A) = 80$
+      5. Path: A → D → B → C → A
+      * Cost: $20 (A \to D) + 25 (D \to B) + 35 (B \to C) + 15 (C \to A) = 95$
+      6. Path: A → D → C → B → A
+      * Cost: $20 (A \to D) + 30 (D \to C) + 35 (C \to B) + 10 (B \to A) = 95$
+✅ Conclusion:
+The Minimum Tour Cost is 80.
+Optimal Paths: A→B→D→C→A or A→C→D→B→A.
+Question 5(b)
+Solve the 0/1 Knapsack Problem using exhaustive search for:
+      * Items: {1, 2, 3}
+      * Weights: {10, 20, 30}
+      * Profits: {60, 100, 120}
+      * Capacity: 50
+Solution
+Exhaustive Search: We list all possible subsets of items, check if they fit in the bag (Weight $\le$ 50), and calculate profit.
+Subset
+	Total Weight
+	Total Profit
+	Valid? (Weight ≤ 50)
+	$\emptyset$
+	0
+	0
+	Yes
+	{1}
+	10
+	60
+	Yes
+	{2}
+	20
+	100
+	Yes
+	{3}
+	30
+	120
+	Yes
+	{1, 2}
+	10+20 = 30
+	60+100 = 160
+	Yes
+	{1, 3}
+	10+30 = 40
+	60+120 = 180
+	Yes
+	{2, 3}
+	20+30 = 50
+	100+120 = 220
+	Yes (Best)
+	{1, 2, 3}
+	10+20+30 = 60
+	60+100+120 = 280
+	No (Overweight)
+	✅ Final Answer:
+We select Items 2 and 3.
+Max Profit = 220.
+OR
+Question 6(a)
+Explain the Bubble Sort algorithm. Sort the array {14, 33, 27, 35, 10} step-by-step process and analyze its time complexity.
+Concept Explanation
+Bubble sort works by repeatedly swapping adjacent elements if they are in the wrong order. The largest element "bubbles up" to the end in each pass.
+Solution
+Array: [14, 33, 27, 35, 10]
+Pass 1:
+      * Compare 14, 33 (No swap) $\to$ [14, 33, 27, 35, 10]
+      * Compare 33, 27 (SWAP) $\to$ [14, 27, 33, 35, 10]
+      * Compare 33, 35 (No swap) $\to$ [14, 27, 33, 35, 10]
+      * Compare 35, 10 (SWAP) $\to$ [14, 27, 33, 10, 35]
+      * Result: 35 is sorted at the end.
+Pass 2:
+      * Compare 14, 27 (No swap)
+      * Compare 27, 33 (No swap)
+      * Compare 33, 10 (SWAP) $\to$ [14, 27, 10, 33, 35]
+      * Result: 33 is sorted.
+Pass 3:
+      * Compare 14, 27 (No swap)
+      * Compare 27, 10 (SWAP) $\to$ [14, 10, 27, 33, 35]
+      * Result: 27 is sorted.
+Pass 4:
+      * Compare 14, 10 (SWAP) $\to$ [10, 14, 27, 33, 35]
+      * Result: Array is fully sorted.
+Final Sorted Array: [10, 14, 27, 33, 35]
+Time Complexity:
+      * Best Case (Already sorted): $O(n)$
+      * Worst Case (Reverse sorted): $O(n^2)$
+      * Average Case: $O(n^2)$
+Question 6(b)
+Explain step-by-step the graph traversal algorithms Breadth-First Search (BFS) and Depth-First Search (DFS) with examples.
+Solution
+Let's consider this simple graph:
+    A
+  / \
+ B   C
+  \ /
+   D
+
+1. Breadth-First Search (BFS):
+      * Strategy: Explore neighbors first (Level by Level). Uses a Queue.
+      * Step 1: Start at A. Visit A. Queue: [B, C]
+      * Step 2: Dequeue B. Visit B. Add neighbors of B (D). Queue: [C, D]
+      * Step 3: Dequeue C. Visit C. Neighbors (D) already in queue. Queue: [D]
+      * Step 4: Dequeue D. Visit D.
+      * Traversal: A $\to$ B $\to$ C $\to$ D
+2. Depth-First Search (DFS):
+      * Strategy: Go deep into one path before backtracking. Uses a Stack (or recursion).
+      * Step 1: Start at A. Visit A.
+      * Step 2: Go to neighbor B. Visit B.
+      * Step 3: Go to neighbor of B (which is D). Visit D.
+      * Step 4: D has neighbor C. Visit C.
+      * Step 5: C connects back to A (already visited). Backtrack.
+      * Traversal: A $\to$ B $\to$ D $\to$ C
+MODULE IV
+Question 7(a)
+Explain the Insertion Sort algorithm. Sort the array {31, 41, 59, 26, 41, 58} step-by-step process and analyze its time complexity.
+Concept Explanation
+Insertion sort works like sorting playing cards in your hand. You take one card and place it in the correct position relative to the cards already sorted to its left.
+Solution
+Array: [31, 41, 59, 26, 41, 58]
+      1. i=1 (Value 41): Compare with 31. 41 > 31. No change.
+      * Array: [31, 41, 59, 26, 41, 58]
+      2. i=2 (Value 59): Compare with 41. 59 > 41. No change.
+      * Array: [31, 41, 59, 26, 41, 58]
+      3. i=3 (Value 26):
+      * 26 < 59 (Shift 59 right)
+      * 26 < 41 (Shift 41 right)
+      * 26 < 31 (Shift 31 right)
+      * Insert 26 at start.
+      * Array: [26, 31, 41, 59, 41, 58]
+      4. i=4 (Value 41 - second one):
+      * 41 < 59 (Shift 59 right)
+      * 41 = 41 (Stop shifting). Insert after first 41.
+      * Array: [26, 31, 41, 41, 59, 58]
+      5. i=5 (Value 58):
+      * 58 < 59 (Shift 59 right)
+      * 58 > 41 (Stop). Insert.
+      * Array: [26, 31, 41, 41, 58, 59]
+Time Complexity:
+      * Best Case: $O(n)$
+      * Worst Case: $O(n^2)$
+Question 7(b)
+Using Topological Sorting, find a valid ordering of vertices for the graph given below and explain the process:
+Edges: $A \to C, A \to D, B \to D, C \to E, D \to E$
+Solution
+Method: Source Removal Method (Indegree).
+Step 1: Calculate Indegrees (number of incoming edges)
+      * A: 0
+      * B: 0
+      * C: 1 (from A)
+      * D: 2 (from A, B)
+      * E: 2 (from C, D)
+Step 2: Pick vertex with Indegree 0
+We have A and B. Let's pick A first.
+      * Output: A
+      * Remove A and its edges ($A \to C, A \to D$).
+      * New Indegrees: B=0, C=0, D=1 (from B), E=2.
+Step 3: Pick next Indegree 0
+We have B and C. Let's pick B.
+      * Output: A, B
+      * Remove B and its edges ($B \to D$).
+      * New Indegrees: C=0, D=0, E=2.
+Step 4: Pick next Indegree 0
+Let's pick C.
+      * Output: A, B, C
+      * Remove C and its edges ($C \to E$).
+      * New Indegrees: D=0, E=1 (from D).
+Step 5: Pick next Indegree 0
+Pick D.
+      * Output: A, B, C, D
+      * Remove D and its edges ($D \to E$).
+      * New Indegrees: E=0.
+Step 6: Pick E.
+      * Final Output: A, B, C, D, E
+(Note: A, B, D, C, E is also a valid valid answer depending on order of removal).
+OR
+Question 8(a)
+Perform Merge Sort on the array {38, 27, 43, 3, 9, 82, 10, 40, 15, 20}. Show all intermediate steps.
+Solution
+Divide Phase:
+         1. [38, 27, 43, 3, 9] | [82, 10, 40, 15, 20]
+         2. [38, 27] [43, 3, 9] | [82, 10] [40, 15, 20]
+         3. [38] [27] | [43] [3, 9] | ... and so on until single elements.
+Conquer (Merge) Phase:
+         1. Merge [38], [27] $\to$ [27, 38]
+         2. Merge [3], [9] $\to$ [3, 9]
+         3. Merge [43], [3, 9] $\to$ [3, 9, 43]
+         4. Merge Left Half: [27, 38] + [3, 9, 43] $\to$ [3, 9, 27, 38, 43]
+         5. Merge [82], [10] $\to$ [10, 82]
+         6. Merge [15], [20] $\to$ [15, 20]
+         7. Merge [40], [15, 20] $\to$ [15, 20, 40]
+         8. Merge Right Half: [10, 82] + [15, 20, 40] $\to$ [10, 15, 20, 40, 82]
+Final Merge:
+[3, 9, 27, 38, 43] + [10, 15, 20, 40, 82]
+Compare 3 vs 10 (Pick 3)
+Compare 9 vs 10 (Pick 9)
+Compare 27 vs 10 (Pick 10)...
+Result: [3, 9, 10, 15, 20, 27, 38, 40, 43, 82]
+Question 8(b)
+Solve the following set of elements using Quick Sort (take the first element as pivot): 35, 50, 15, 25, 80, 20, 90, 45.
+Solution
+Array: [35, 50, 15, 25, 80, 20, 90, 45]
+Pivot: 35
+Partitioning Step:
+We want elements < 35 on left, > 35 on right.
+         1. Check 50 (Greater, stops left pointer).
+         2. Check 20 (from right side, Smaller, stops right pointer).
+         3. Swap 50 and 20.
+Array: [35, 20, 15, 25, 80, 50, 90, 45]
+         4. Move pointers. Left sees 80 (Greater). Right sees 25 (Smaller).
+         5. Swap 80 and 25? Wait, indices crossed.
+The split point is where 25 is.
+         6. Swap Pivot (35) with 25.
+After Partition: [25, 20, 15, 35, 80, 50, 90, 45]
+Recursive Step:
+            * Sort Left: [25, 20, 15]
+            * Sort Right: [80, 50, 90, 45]
+Final Result: [15, 20, 25, 35, 45, 50, 80, 90]
+Question 8(c)
+For the binary tree given below, perform Inorder, Preorder and Postorder Traversals.
+        F
+     /   \
+    B     G
+   / \     \
+  A   D     I
+     / \   /
+    C   E H
+
+Solution
+1. Preorder Traversal (Root $\to$ Left $\to$ Right)
+            * Visit F
+            * Go Left: B $\to$ A
+            * Back to B $\to$ Right to D $\to$ C $\to$ E
+            * Back to F $\to$ Go Right: G $\to$ I $\to$ H
+            * Answer: F, B, A, D, C, E, G, I, H
+2. Inorder Traversal (Left $\to$ Root $\to$ Right)
+            * Leftmost A
+            * Root B
+            * D's Left C $\to$ Root D $\to$ Right E
+            * Root F
+            * G (has no left) $\to$ Root G
+            * I's Left H $\to$ Root I
+            * Answer: A, B, C, D, E, F, G, H, I
+3. Postorder Traversal (Left $\to$ Right $\to$ Root)
+            * A
+            * C, E $\to$ D
+            * B
+            * H $\to$ I $\to$ G
+            * F
+            * Answer: A, C, E, D, B, H, I, G, F
+MODULE V
+Question 9(a)
+Solve a Minimum Spanning Tree (MST) problem using Prim’s Algorithm.
+Start Vertex: A
+Graph Data:
+$A-B(6), A-C(3), B-C(2), B-D(5), C-D(3), C-E(4), D-E(2)$
+Solution
+Prim's Logic: Grow the tree one edge at a time from the start node, always picking the smallest edge connecting the "tree" to the "outside".
+            1. Start at A.
+            * Neighbors: B(6), C(3).
+            * Pick smallest: A-C (3).
+            * Tree: {A, C}. Cost = 3.
+            2. From {A, C}, check neighbors:
+            * From A: B(6).
+            * From C: B(2), D(3), E(4).
+            * Smallest is C-B (2).
+            * Pick C-B (2).
+            * Tree: {A, C, B}. Cost = 3+2 = 5.
+            3. From {A, C, B}, check neighbors:
+            * From B: D(5).
+            * From C: D(3), E(4).
+            * Smallest is C-D (3).
+            * Pick C-D (3).
+            * Tree: {A, C, B, D}. Cost = 5+3 = 8.
+            4. From {A, C, B, D}, check neighbors:
+            * From D: E(2).
+            * From C: E(4).
+            * Smallest is D-E (2).
+            * Pick D-E (2).
+            * Tree: {A, C, B, D, E}. All vertices visited.
+Total Cost: $3 + 2 + 3 + 2 = \mathbf{10}$.
+Edges: $(A,C), (C,B), (C,D), (D,E)$.
+Question 9(b)
+Find the MST using Kruskal’s Algorithm. Draw the graph, list all edges in sorted order, apply Kruskal’s steps, and draw the final MST.
+Graph Data:
+$A-B(4), A-C(3), B-C(1), B-D(2), C-D(4), C-E(5), D-E(7)$
+Solution
+Kruskal's Logic: Sort ALL edges by weight. Add them if they don't form a cycle.
+Step 1: Sort Edges
+            1. B-C (1)
+            2. B-D (2)
+            3. A-C (3)
+            4. A-B (4)
+            5. C-D (4)
+            6. C-E (5)
+            7. D-E (7)
+Step 2: Selection
+            1. Add B-C (1). (No cycle).
+            2. Add B-D (2). (No cycle).
+            3. Add A-C (3). (No cycle).
+            4. Check A-B (4). A and B are already connected (A-C-B). Reject (Cycle).
+            5. Check C-D (4). C and D are already connected (C-B-D). Reject (Cycle).
+            6. Add C-E (5). Connects E to the main tree. (No cycle).
+Total Cost: $1 + 2 + 3 + 5 = \mathbf{11}$.
+Final Edges: $(B,C), (B,D), (A,C), (C,E)$.
+OR
+Question 10(a)
+Explain Dijkstra’s algorithm to find the shortest path from source vertex A to all other vertices in the following weighted graph.
+Graph Data:
+$A-B(6), A-D(1), B-D(2), B-E(2), D-E(1), D-C(1), C-E(5)$
+Solution
+Logic: Keep track of the "Shortest Distance Found So Far" for every vertex. Initialize Start=0, others=infinity. Relax edges.
+Initialization:
+A=0, B=$\infty$, C=$\infty$, D=$\infty$, E=$\infty$.
+Visited = {}
+            1. Visit A (Dist 0):
+            * Neighbors: B(6), D(1).
+            * Update B: $\min(\infty, 0+6) = 6$.
+            * Update D: $\min(\infty, 0+1) = 1$.
+            * Visited = {A}.
+            2. Pick Unvisited Smallest (D with Dist 1):
+            * Neighbors of D: B(2), E(1), C(1).
+            * Update B: Current=6. New via D = $1 (A \to D) + 2 (D \to B) = 3$. Update B to 3.
+            * Update E: Current=$\infty$. New via D = $1 + 1 = 2$. Update E to 2.
+            * Update C: Current=$\infty$. New via D = $1 + 1 = 2$. Update C to 2.
+            * Visited = {A, D}.
+            3. Pick Unvisited Smallest (E or C, both 2. Let's pick E):
+            * Neighbors of E: B(2), C(5).
+            * Check B: Current=3. Via E = $2 + 2 = 4$. (4 is not smaller than 3). No change.
+            * Check C: Current=2. Via E = $2 + 5 = 7$. No change.
+            * Visited = {A, D, E}.
+            4. Pick Unvisited Smallest (C with Dist 2):
+            * Neighbors: D(1), E(5). Both visited. No updates.
+            * Visited = {A, D, E, C}.
+            5. Pick B (Dist 3):
+            * Visited = {A, D, E, C, B}.
+Final Shortest Distances from A:
+            * A: 0
+            * D: 1
+            * C: 2
+            * E: 2
+            * B: 3
+Question 10(b)
+Explain NP Problems in detail and illustrate with a suitable example problem.
+Concept Explanation
+This is about how "hard" a problem is to solve.
+Solution
+1. P (Polynomial Time):
+Problems that can be solved quickly (in polynomial time like $O(n^2)$) by a computer.
+            * Example: Sorting, Searching, Shortest Path.
+2. NP (Nondeterministic Polynomial Time):
+Problems where, if you give me a solution (a "certificate"), I can verify it quickly. However, finding the solution might take forever.
+            * Example: Sudoku (Hard to solve, easy to check).
+3. NP-Complete:
+The hardest problems in NP. If you can solve ONE NP-Complete problem quickly (in P time), you can solve ALL NP problems quickly.
+            * Example: Travelling Salesman Problem (TSP), Knapsack Problem.
+4. NP-Hard:
+Problems that are at least as hard as the hardest problems in NP. They might not even be verifiable in polynomial time.
+Illustrative Example: Travelling Salesman Problem (TSP)
+            * The Problem: Given a list of cities and distances, find the shortest route to visit all and return.
+            * Why is it NP? If you give me a route and say "This cost is 100", I can check the math easily (Verification is fast).
+            * Why is it Hard? To find the absolute best route, I have to check almost every combination. As cities increase, the time explodes ($O(n!)$).
